@@ -18,3 +18,12 @@ def preenche_frota(frota, nome_do_navio, linha, coluna, orientacao, tamanho):
         frota[nome_do_navio] = [posicoes_novas]
 
     return frota
+
+def faz_jogada(tabuleiro,linha,coluna):
+
+    if tabuleiro[linha] == 1 and tabuleiro[coluna] == 1:
+        tabuleiro[linha] = 'X' and tabuleiro[coluna] = 'X'
+    else:
+        tabuleiro[linha] = '-' and tabuleiro[coluna] = '-'
+
+    return tabuleiro
