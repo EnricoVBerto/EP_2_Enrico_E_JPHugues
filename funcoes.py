@@ -55,3 +55,8 @@ def posicao_valida(frota,linha,coluna,orientacao,tamanho):
     for x, y in posicoes_navio:
         if x < 0 or x >= 10 or y < 0 or y >= 10:
             return False
+    for posicoes in frota.values():
+        for posicao_navio in posicoes:
+            for posicao in posicao_navio:
+                if posicao in posicoes_navio:
+                    return False
