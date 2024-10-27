@@ -23,7 +23,7 @@ for nome, tamanho, quantidade in lista_navios:
             valida = posicao_valida(frota, linha, coluna, orientacao, tamanho)
             if valida == True:
                 posicao_do_navio = define_posicoes(linha, coluna, orientacao, tamanho)
-                preenche_frota(frota, nome, posicao_do_navio)
+                preenche_frota(frota, nome, linha, coluna, orientacao, tamanho)
                 break
             else:
                 print("Esta posição não está válida!")
