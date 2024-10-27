@@ -18,7 +18,7 @@ for nome, tamanho, quantidade in lista_navios:
                 orientacao1=int(input('Qual orientação deseja? ===> Vertical (1) , Horizontal (2)')) 
                 if orientacao1==1:
                     orientacao='vertical'
-                if orientacao==2:
+                if orientacao1==2:
                     orientacao='horizontal'
             valida = posicao_valida(frota, linha, coluna, orientacao, tamanho)
             if valida == True:
