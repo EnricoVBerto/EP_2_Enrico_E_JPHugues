@@ -1,13 +1,13 @@
 def define_posicoes(linha,coluna,orientacao,tamanho):
-    posicao=[]
-    i=0
-    while i!=tamanho:
-        if orientacao=='vertical':
-            posicao.append([linha+i,coluna])
-        if orientacao=='horizontal':
-            posicao.append([linha,coluna+i])
-        i+=1
-    return posicao
+        posicao=[]
+        i=0
+        while i!=tamanho:
+            if orientacao=='vertical':
+                posicao.append([linha+i,coluna])
+            if orientacao=='horizontal':
+                posicao.append([linha,coluna+i])
+            i+=1
+        return posicao  
 
 
 def preenche_frota(frota, nome_do_navio, linha, coluna, orientacao, tamanho):
@@ -49,3 +49,9 @@ def afundados(frota,tabuleiro):
             if navio_afundado:
                 total += 1
     return total
+
+def posicao_valida(frota,linha,coluna,orientacao,tamanho):
+    posicoes_navio=define_posicoes(linha,coluna,orientacao,tamanho)
+    for x, y in posicoes_navio:
+        if x < 0 or x >= 10 or y < 0 or y >= 10:
+            return False
