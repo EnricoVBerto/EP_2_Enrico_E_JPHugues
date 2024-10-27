@@ -60,3 +60,4 @@ def posicao_valida(frota,linha,coluna,orientacao,tamanho):
             for posicao in posicao_navio:
                 if posicao in posicoes_navio:
                     return False
+    return True
