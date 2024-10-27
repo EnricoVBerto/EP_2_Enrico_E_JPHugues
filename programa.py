@@ -20,3 +20,11 @@ for nome, tamanho, quantidade in lista_navios:
                     orientacao='vertical'
                 if orientacao==2:
                     orientacao='horizontal'
+            valida = posicao_valida(frota, linha, coluna, orientacao, tamanho)
+            if valida == True:
+                posicao_do_navio = define_posicoes(linha, coluna, orientacao, tamanho)
+                preenche_frota(frota, nome, posicao_do_navio)
+                break
+            else:
+                print("Esta posição não está válida!")
+    
