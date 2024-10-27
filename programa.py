@@ -15,7 +15,7 @@ for nome, tamanho, quantidade in lista_navios:
             if nome == "submarino":
                 orientacao = None
             else:
-                orientacao1=int(input('Qual orientação deseja?')) 
+                orientacao1=int(input('Qual orientação deseja? ===> Vertical (1) , Horizontal (2)')) 
                 if orientacao1==1:
                     orientacao='vertical'
                 if orientacao==2:
@@ -27,4 +27,5 @@ for nome, tamanho, quantidade in lista_navios:
                 break
             else:
                 print("Esta posição não está válida!")
+    print(frota)
     
