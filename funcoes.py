@@ -29,10 +29,9 @@ def faz_jogada(tabuleiro,linha,coluna):
     return tabuleiro
 
 def posiciona_frota(frota):
-    tabuleiro = []
+    tabuleiro= []
     for i in range(10):
-        for j in range(i):
-            tabuleiro[i][j]=0
+        tabuleiro[i]=[0]*10
     for posicoes in frota.values():
         for posicao_navio in posicoes:
             for x, y in posicao_navio:
