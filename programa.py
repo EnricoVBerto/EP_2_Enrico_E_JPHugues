@@ -5,24 +5,32 @@ frota = { "porta-aviões": [],
     "contratorpedeiro": [],
     "submarino": [] }
 
-lista_navios = [("porta-aviões", 4, 1), ("navio-tanque", 3, 2), ("contratorpedeiro", 2, 3), ("submarino", 1, 4)]
+lista_navios = [
+    ("porta-aviões", 4, 1),
+    ("navio-tanque", 3, 2),
+    ("contratorpedeiro", 2, 3),
+    ("submarino", 1, 4)
+]
 
 for nome, tamanho, quantidade in lista_navios:
-    for _ in range(quantidade):
+    for i in range(quantidade):
         while True:
             print(f"Insira as informações referentes ao navio {nome} que possui tamanho {tamanho}")
-            linha = int(input("Linha: "))
-            coluna = int(input("Coluna: "))
+            linha = int(input("Escolha a linha que deseja: "))
+            coluna = int(input("Escolha a coluna que deseja: "))
 
             if nome == "submarino":
                 orientacao = None
             else:
-                orientacao_input = int(input("[1] Vertical [2] Horizontal > "))
-                orientacao = "vertical" if orientacao_input == 1 else "horizontal"
+                orientacao1 = int(input("[1] Vertical [2] Horizontal > "))
+                if orientacao1==1:
+                    orientacao='vertical'
+                else:
+                    orientacao='horizontal'
 
             if posicao_valida(frota, linha, coluna, orientacao, tamanho):
                 posicoes_navio = define_posicoes(linha, coluna, orientacao, tamanho)
-                preenche_frota(frota, nome, linha, coluna, orientacao, tamanho)
+                frota = preenche_frota(frota, nome, linha, coluna, orientacao, tamanho)
                 break
             else:
                 print("Esta posição não está válida!")
